@@ -14,9 +14,7 @@ export function onClientRequest(request) {
     // grab the qs, assign the value
     const rawQuery = new URLSearchParams(request.query);
     const bcText = String(rawQuery.get('value')) || 'BUY DOGE';
-    const bcObj = {
-        xmlDocument: document
-    };
+    const bcObj = { xmlDocument: document };
 
     bcObj.format = String(rawQuery.get('format')) || 'auto';
     bcObj.width = Number(rawQuery.get('width')) || 2;
