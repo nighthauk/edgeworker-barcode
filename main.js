@@ -1,6 +1,7 @@
 import URLSearchParams from 'url-search-params';
 import JsBarcode from 'jsbarcode';
 import { DOMImplementation, XMLSerializer } from 'xmldom';
+import { optimize } from 'svgo';
 import { logger } from 'log';
 
 export function onClientRequest(request) {
@@ -15,6 +16,11 @@ export function onClientRequest(request) {
     const rawQuery = new URLSearchParams(request.query);
     const bcText = String(rawQuery.get('value')) || 'BUY DOGE';
     const bcObj = { xmlDocument: document };
+    const config = {
+        plugins: [
+            'removeDoctype'
+        ]
+    };
 
     bcObj.format = String(rawQuery.get('format')) || 'auto';
     bcObj.width = Number(rawQuery.get('width')) || 2;
@@ -48,6 +54,6 @@ export function onClientRequest(request) {
     request.respondWith(
         200
         , { 'Content-Type': ['image/svg+xml'] }
-        , svgText
+        , optimize(svgText, { ...config })
     );
 }

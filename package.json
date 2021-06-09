@@ -14,12 +14,15 @@
     "canvas": "^2.8.0",
     "jsbarcode": "^3.11.4",
     "mini-svg-data-uri": "^1.3.3",
+    "svgo": "^2.3.0",
     "xmldom": "^0.6.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "rollup": "^2.50.0",
-    "rollup-plugin-copy-assets": "^2.0.3"
+    "rollup-plugin-copy-assets": "^2.0.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }

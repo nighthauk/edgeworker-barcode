@@ -1,5 +1,5 @@
 {
-  "edgeworker-version": "0.1.18",
+  "edgeworker-version": "0.1.19",
   "bundle-version": 1,
   "description" : "Akamai EdgeWorker Barcode Generator",
   "misc": {
