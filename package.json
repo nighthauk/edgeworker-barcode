@@ -1,0 +1,25 @@
+{
+  "name": "ew-bcg",
+  "version": "1.0.0",
+  "description": "Example barcode generator running on Akamai Edgeworkers",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "build": "rollup -c && cd dist/work && tar -zcvf ../ew-bcg.tgz *"
+  },
+  "author": "rhauk@akamai.com",
+  "license": "ISC",
+  "dependencies": {
+    "bwip-js": "^3.0.0",
+    "canvas": "^2.8.0",
+    "jsbarcode": "^3.11.4",
+    "mini-svg-data-uri": "^1.3.3",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "rollup": "^2.50.0",
+    "rollup-plugin-copy-assets": "^2.0.3"
+  }
+}
